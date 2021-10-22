@@ -1,1 +1,2 @@
-PKG netbox postgresql14-server-14.0 
+PKG netbox postgresql12-server
+SYSRC postgresql_enable=YES
