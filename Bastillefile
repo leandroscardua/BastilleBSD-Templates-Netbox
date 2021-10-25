@@ -1,4 +1,7 @@
 CONFIG set sysvshm=new
 RESTART
-PKG netbox postgresql12-server
+PKG netbox postgresql12-server redis
 SYSRC postgresql_enable=YES
+SYSRC redis_enable=YES
+CMD echo 'CREATE DATABASE netbox; \n CREATE USER netbox WITH PASSWORD 'N3tsB0x@21'; \n GRANT ALL PRIVILEGES ON DATABASE netbox TO netbox; \n \q' | psql -U postgres
+CMD cp /usr/local/share/netbox/netbox/configuration.example.py configuration.py
