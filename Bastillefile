@@ -1,2 +1,4 @@
+CONFIG set sysvshm=new
+RESTART
 PKG netbox postgresql12-server
 SYSRC postgresql_enable=YES
